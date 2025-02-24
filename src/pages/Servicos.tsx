@@ -5,7 +5,7 @@ import {
   HeartPulse, 
   Stethoscope, 
   Activity, 
-  Pills,
+  Pill,
   UserCog,
   Bath,
   Baby,
@@ -59,7 +59,7 @@ const Servicos = () => {
               </div>
 
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all">
-                <Pills className="text-gold w-12 h-12 mb-4" />
+                <Pill className="text-gold w-12 h-12 mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-olive">Gestão de Medicamentos</h3>
                 <p className="text-olive/70">
                   Controle e administração de medicações prescritas.
