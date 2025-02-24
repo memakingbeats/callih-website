@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -26,12 +25,20 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#38B2AC",
+          DEFAULT: "#606C38", // olive green
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#EBF8FF",
-          foreground: "#2D3748",
+          DEFAULT: "#E6D5C3", // beige
+          foreground: "#283618",
+        },
+        gold: {
+          DEFAULT: "#BC9A6C", // gold accent
+          light: "#D4B483",
+        },
+        olive: {
+          DEFAULT: "#283618",
+          light: "#606C38",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -42,8 +49,8 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#BC9A6C",
+          foreground: "#FFFFFF",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -53,6 +60,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      backgroundImage: {
+        'gradient-main': 'linear-gradient(to right, #606C38, #E6D5C3)',
       },
       keyframes: {
         "accordion-down": {
