@@ -1,4 +1,3 @@
-
 import { Heart, UserPlus, Stethoscope } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -30,8 +29,8 @@ const Index = () => {
             </div>
             <div className="animate-fadeIn">
               <img
-                src="/lovable-uploads/5020651a-5040-4979-83fb-3fd50dfa8eed.png"
-                alt="Healthcare Professional"
+                src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800"
+                alt="Healthcare Professional with Stethoscope"
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
@@ -72,6 +71,56 @@ const Index = () => {
               <p className="text-olive/70">
                 Atendimento 24 horas para situações que requerem cuidados imediatos.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sobre Nós Section */}
+      <section className="py-16 bg-secondary/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-olive mb-4">Sobre Nós</h2>
+            <p className="text-olive/80">
+              Conheça nossa equipe especializada em cuidados de saúde
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="flex flex-col md:flex-row gap-6 items-center">
+              <div className="w-48 h-48 rounded-full overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400"
+                  alt="Dra. Maria Silva"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-olive mb-2">Dra. Maria Silva</h3>
+                <p className="text-olive/70">
+                  Especialista em gestão de saúde com mais de 15 anos de experiência. 
+                  Lidera nossa equipe de cuidados domiciliares com dedicação e excelência,
+                  garantindo o melhor atendimento para nossos pacientes.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col md:flex-row gap-6 items-center">
+              <div className="w-48 h-48 rounded-full overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400"
+                  alt="Dra. Ana Santos"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-olive mb-2">Dra. Ana Santos</h3>
+                <p className="text-olive/70">
+                  Coordenadora de operações com especialização em cuidados intensivos.
+                  Responsável por desenvolver protocolos personalizados que garantem
+                  a qualidade e segurança no atendimento domiciliar.
+                </p>
+              </div>
             </div>
           </div>
         </div>
