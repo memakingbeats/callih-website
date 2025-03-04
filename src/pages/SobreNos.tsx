@@ -57,9 +57,9 @@ const SobreNos = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="w-48 h-48 rounded-full overflow-hidden">
+                <div className="rounded overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400"
+                    src="/images/socia.jpeg"
                     alt="Dra. Maria Silva"
                     className="w-full h-full object-cover"
                   />
@@ -79,9 +79,9 @@ const SobreNos = () => {
               </div>
 
               <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="w-48 h-48 rounded-full overflow-hidden">
+                <div className="rounded overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400"
+                    src="/images/carla.jpeg"
                     alt="Dra. Ana Santos"
                     className="w-full h-full object-cover"
                   />
