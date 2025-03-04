@@ -2,8 +2,6 @@ import { Heart, UserPlus, Stethoscope } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-
-
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -34,7 +32,7 @@ const Index = () => {
             </div>
             <div className="animate-fadeInRight">
               <img
-                src="../../public/images/duplaBG.png"
+                src="/images/duplaBG.png"
                 alt="Healthcare Professional with Stethoscope"
                 className="rounded-lg shadow-lg w-full transform transition-all duration-500 hover:scale-105"
               />
@@ -117,7 +115,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className=" rounded overflow-hidden">
                 <img
-                  src="../../public/images/socia.jpeg"
+                  src="/images/socia.jpeg"
                   alt="Dra. Maria Silva"
                   className="w-full h-full object-cover"
                 />
@@ -139,7 +137,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className=" rounded overflow-hidden">
                 <img
-                  src="../../public/images/carla.jpeg"
+                  src="/images/carla.jpeg"
                   alt="Dra. Ana Santos"
                   className="w-full h-full object-cover"
                 />
@@ -178,7 +176,7 @@ const Index = () => {
             {/* Card 1 */}
             <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <img
-                src="../../public/images/agenda.jpg"
+                src="/images/agenda.jpg"
                 alt="Dieta"
                 className="w-full h-48 object-cover"
               />
@@ -199,7 +197,7 @@ const Index = () => {
             {/* Card 2 */}
             <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <img
-                src="../../public/images/doc1.jpg"
+                src="/images/doc1.jpg"
                 alt="Medicações Especiais"
                 className="w-full h-48 object-cover"
               />
@@ -220,7 +218,7 @@ const Index = () => {
             {/* Card 3 */}
             <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <img
-                src="../../public/images/doc2.jpg"
+                src="/images/doc2.jpg"
                 alt="Antibióticos"
                 className="w-full h-48 object-cover"
               />
@@ -244,7 +242,7 @@ const Index = () => {
             {/* Card 4 */}
             <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <img
-                src="../../public/images/doc3.jpg"
+                src="/images/doc3.jpg"
                 alt="Outro Serviço"
                 className="w-full h-48 object-cover"
               />
