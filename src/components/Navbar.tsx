@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -11,9 +13,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-semibold text-olive">Callih</Link>
+            <Link to="/" className="text-2xl font-semibold text-olive" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: "300" }}>CALLIH</Link>
           </div>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-12">
             <Link to="/" className="text-olive hover:text-gold transition-colors uppercase text-sm tracking-wider">Home</Link>
