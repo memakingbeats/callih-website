@@ -7,7 +7,7 @@ const SobreNos = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-grow pt-20">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-primary to-secondary py-16">
@@ -65,14 +65,19 @@ const SobreNos = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-olive mb-2">Dra. Maria Silva</h3>
+                  <h3 className="text-xl font-semibold text-olive mb-2">ALINE HENTZ</h3>
                   <p className="text-olive/70">
-                    Especialista em gestão de saúde com mais de 15 anos de experiência. 
-                    Lidera nossa equipe de cuidados domiciliares com dedicação e excelência.
+                    Formada em Processos Gerenciais, Certificada
+                    Consultora de Saúde pelo Hospital Albert Einstein -
+                    experiência de 27 anos na área da saúde, atuando em
+                    laboratório de análises clinicas, clinica médica e
+                    hospital dia. Com foco na gestão por processos e administrativa,
+                    aplicando conhecimentos de Lean Healthcare na
+                    otimização de processos.
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="w-48 h-48 rounded-full overflow-hidden">
                   <img
@@ -82,10 +87,15 @@ const SobreNos = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-olive mb-2">Dra. Ana Santos</h3>
+                  <h3 className="text-xl font-semibold text-olive mb-2">CARLA PANDOLFO</h3>
                   <p className="text-olive/70">
-                    Coordenadora de operações com especialização em cuidados intensivos.
-                    Responsável por desenvolver protocolos personalizados.
+                    Formada em Gestão Financeira com experiência de
+                    29 anos na área da saúde, atuando desde
+                    consultórios médicos, clínicas, hospitais e operadora
+                    de plano de saúde. Com foco na gestão de pessoas, administrativa e
+                    financeira, aplicando conhecimentos sólidos em
+                    otimização de processos, Leads e Captação de
+                    clientes.
                   </p>
                 </div>
               </div>
