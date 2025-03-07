@@ -149,7 +149,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex flex-col md:flex-row gap-6 items-center">
-              <div className="rounded overflow-hidden">
+              <div className="rounded overflow-hidden w-64 h-96 flex-shrink-0"> {/* Quadrado maior */}
                 <img
                   src="/images/socia.jpeg"
                   alt="Dra. Maria Silva"
@@ -171,9 +171,9 @@ const Index = () => {
             </div>
 
             <div className="flex flex-col md:flex-row gap-6 items-center">
-              <div className="rounded overflow-hidden">
+              <div className="rounded overflow-hidden w-64 h-96 flex-shrink-0"> {/* Quadrado maior */}
                 <img
-                  src="/images/carla.jpeg"
+                  src="/images/Carla2.jpg"
                   alt="Dra. Ana Santos"
                   className="w-full h-full object-cover"
                 />
@@ -212,7 +212,7 @@ const Index = () => {
             {/* Card 1 */}
             <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <img
-                src="/images/agenda.jpg"
+                src="/images/canva1.png"
                 alt="Dieta"
                 className="w-full h-48 object-cover"
               />
@@ -233,7 +233,7 @@ const Index = () => {
             {/* Card 2 */}
             <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <img
-                src="/images/doc1.jpg"
+                src="/images/canva3.png"
                 alt="Medicações Especiais"
                 className="w-full h-48 object-cover"
               />
@@ -254,7 +254,7 @@ const Index = () => {
             {/* Card 3 */}
             <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <img
-                src="/images/doc2.jpg"
+                src="/images/canva2.png"
                 alt="Antibióticos"
                 className="w-full h-48 object-cover"
               />
@@ -274,7 +274,7 @@ const Index = () => {
             {/* Card 4 */}
             <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <img
-                src="/images/doc3.jpg"
+                src="/images/palestra.jpg"
                 alt="Outro Serviço"
                 className="w-full h-48 object-cover"
               />
