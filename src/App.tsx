@@ -11,18 +11,24 @@ import SobreNos from "./pages/SobreNos";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 
+
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
+        rel="stylesheet"
+      />
       <Toaster />
       <Sonner />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/entrega" element={<Entrega />} />
-          <Route path="/servicos" element={<Servicos />} />
+          <Route path="/servicos/:serviceId" element={<Servicos />} />
           <Route path="/sobre-nos" element={<SobreNos />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="*" element={<NotFound />} />

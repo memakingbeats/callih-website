@@ -1,8 +1,67 @@
-import { Heart, UserPlus, Stethoscope } from 'lucide-react';
+import { Heart, UserPlus, Stethoscope, Bath, UserCog, Pill, Activity, HeartPulse } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+const services = [
+  {
+    id: 1,
+    icon: Heart,
+    title: 'Mapeamento e Redesenho de Processos',
+  },
+  {
+    id: 2,
+    icon: UserPlus,
+    title: 'Melhoria do Fluxo e Experiência do Paciente',
+  },
+  {
+    id: 3,
+    icon: Stethoscope,
+    title: 'Implementação de Protocolos Operacionais Padrão (POPs)',
+  },
+  {
+    id: 4,
+    icon: Activity,
+    title: 'Gestão de Agendas e Otimização de Tempo',
+  },
+  {
+    id: 5,
+    icon: Pill,
+    title: 'Capacitação e Treinamento de Equipes',
+  },
+  {
+    id: 6,
+    icon: Bath,
+    title: 'Gestão de Custos e Análise Financeira',
+  },
+  {
+    id: 7,
+    icon: UserCog,
+    title: 'Gestão de Relacionamento com o Paciente (CRM)',
+  },
+  {
+    id: 8,
+    icon: HeartPulse,
+    title: 'Gestão Estratégica para Consultórios',
+  },
+];
+
 const Index = () => {
+  const navigate = useNavigate();
+
+  // Função para rolar até a seção de serviços
+  const scrollToServicos = () => {
+    const servicosSection = document.getElementById('servicos');
+    if (servicosSection) {
+      servicosSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Função para redirecionar para a página de contato
+  const goToContato = () => {
+    navigate('/contato');
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -12,29 +71,35 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="animate-fadeInLeft">
+              <h2 className="text-white mb-4 transform transition-all duration-500 hover:scale-105" style={{ fontFamily: 'Manrope, sans-serif', fontSize: '20pt' }}>
+                Gestão em Saúde
+              </h2>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 transform transition-all duration-500 hover:scale-105">
-                TRANSFORMAMOS PROCESSOS PARA
-                O SUCESSO DO SEU NEGÓCIO
+                TRANSFORMAMOS PROCESSOS PARA O SUCESSO DO SEU NEGÓCIO
               </h1>
               <p className="text-lg text-white/90 mb-8 transform transition-all duration-500 hover:scale-105">
-                Descomplique a gestão da
-                sua clínica e foque no
-                crescimento!
+                Descomplique a gestão da sua clínica e foque no crescimento!
               </p>
               <div className="space-x-4">
-                <a href="#" className="bg-gold text-white px-6 py-3 rounded-md hover:bg-gold/90 transition-colors transform hover:scale-105 duration-300">
-                  Leia Mais
-                </a>
-                <a href="#" className="bg-white/10 text-white px-6 py-3 rounded-md hover:bg-white/20 transition-colors backdrop-blur-sm transform hover:scale-105 duration-300">
+                <button
+                  onClick={scrollToServicos}
+                  className="bg-gold text-white px-6 py-3 rounded-md hover:bg-gold/90 transition-colors transform hover:scale-105 duration-300"
+                >
+                  Ver Mais
+                </button>
+                <button
+                  onClick={goToContato}
+                  className="bg-white/10 text-white px-6 py-3 rounded-md hover:bg-white/20 transition-colors backdrop-blur-sm transform hover:scale-105 duration-300"
+                >
                   Fale Conosco
-                </a>
+                </button>
               </div>
             </div>
             <div className="animate-fadeInRight">
               <img
-                src="/images/duplaBG.png"
+                src="/images/LOGOCALLIH2.png"
                 alt="Healthcare Professional with Stethoscope"
-                className="rounded-lg shadow-lg w-full transform transition-all duration-500 hover:scale-105"
+                className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 mt-12 p-20"
               />
             </div>
           </div>
@@ -42,56 +107,30 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-secondary/30">
+      <section id="servicos" className="py-16 bg-secondary/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-olive mb-4">Serviços</h2>
             <p className="text-olive/80">
-              Nossa consultoria atua de forma personalizada
-              otimizando processos, capacitando equipes e
-              melhorando sua previsibilidade financeira,
-              através de:
+              Nossa consultoria atua de forma personalizada, otimizando processos, capacitando equipes e
+              melhorando sua previsibilidade financeira, através de:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <Heart className="text-gold w-12 h-12 mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-olive"></h3>
-              <p className="text-olive/70">
-                Além de nossa consultoria
-                completa, oferecemos um
-                serviço exclusivo para
-                consultórios médicos: a
-                Gestão Estratégica.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <UserPlus className="text-gold w-12 h-12 mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-olive"></h3>
-              <ul className="custom-list list-inside text-olive/70 space-y-2">
-                <li>Mapeamento e Redesenho de Processos</li>
-                <li>Melhoria do Fluxo e Experiência do Paciente</li>
-                <li>Implementação de Protocolos Operacionais Padrão (POPs)</li>
-                <li>Gestão de Estoque e Insumos</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <Stethoscope className="text-gold w-12 h-12 mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-olive"></h3>
-              <ul className="custom-list list-inside text-olive/70 space-y-2">
-                <li>Gestão de Agendas e Otimização
-                  de Tempo</li>
-                <li>Capacitação e Treinamento de
-                  Equipes</li>
-                <li>Gestão de Custos e Análise
-                  Financeira</li>
-                <li>Gestão de Relacionamento com
-                  o Paciente (CRM)</li>
-              </ul>
-            </div>
+          {/* Grid de 8 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full flex flex-col items-center text-center cursor-pointer"
+                onClick={() => navigate(`/servicos/${service.id}`)}
+              >
+                <service.icon className="text-gold w-12 h-12 mb-4" />
+                <h3 className="text-xl font-semibold mb-2 text-olive">
+                  {service.title}
+                </h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -102,18 +141,15 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-olive mb-4">Sobre Nós</h2>
             <p className="text-olive/80">
-              Somos especialistas em gestão na área
-              da saúde e estamos comprometidas em
-              transformar a organização do seu
-              consultório ou clínica, trazendo mais
-              eficiência, rentabilidade e qualidade no
-              atendimento.
+              Somos especialistas em gestão na área da saúde e estamos comprometidas em
+              transformar a organização do seu consultório ou clínica, trazendo mais
+              eficiência, rentabilidade e qualidade no atendimento.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex flex-col md:flex-row gap-6 items-center">
-              <div className=" rounded overflow-hidden">
+              <div className="rounded overflow-hidden">
                 <img
                   src="/images/socia.jpeg"
                   alt="Dra. Maria Silva"
@@ -135,7 +171,7 @@ const Index = () => {
             </div>
 
             <div className="flex flex-col md:flex-row gap-6 items-center">
-              <div className=" rounded overflow-hidden">
+              <div className="rounded overflow-hidden">
                 <img
                   src="/images/carla.jpeg"
                   alt="Dra. Ana Santos"
@@ -167,7 +203,7 @@ const Index = () => {
               NOSSA METODOLOGIA
             </h2>
             <p className="text-olive/70">
-              Oferecemos diversos serviços para melhor lhe atender
+              A organização de processos, a eficiência operacional e a gestão estratégica são fundamentais para garantir um negócio saudável e sustentável. É exatamente aqui que a CALLIH Gestão em Saúde pode ajudar.
             </p>
           </div>
 
@@ -225,13 +261,9 @@ const Index = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-olive">Mapeamento de Processos</h3>
                 <ul className="custom-list list-inside text-olive/70 space-y-2">
-                  <li>Identificação e documentação dos
-                    processos existentes</li>
-                  <li>Análise dos fluxos de trabalho, entradas,
-                    saídas, atividades e interações entre departamentos.</li>
-                  <li>Criação de mapas de processos para
-                    visualizar o fluxo end-to-end.</li>
-
+                  <li>Identificação e documentação dos processos existentes</li>
+                  <li>Análise dos fluxos de trabalho, entradas, saídas, atividades e interações entre departamentos.</li>
+                  <li>Criação de mapas de processos para visualizar o fluxo end-to-end.</li>
                 </ul>
                 <a href="#" className="text-gold hover:text-gold/80 transition-colors">
                   Mais detalhes →
@@ -263,9 +295,12 @@ const Index = () => {
 
           {/* Botão "Mais Serviços" */}
           <div className="text-center mt-12">
-            <a href="#" className="bg-olive text-white px-8 py-3 rounded-md hover:bg-olive/90 transition-colors inline-block">
+            <button
+              onClick={scrollToServicos}
+              className="bg-olive text-white px-8 py-3 rounded-md hover:bg-olive/90 transition-colors inline-block"
+            >
               Mais Serviços
-            </a>
+            </button>
           </div>
         </div>
       </section>

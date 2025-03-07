@@ -12,18 +12,33 @@ const Contato = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the form submission
-    // For now, we'll just show a success message
-    toast.success("Mensagem enviada com sucesso!");
-    setFormData({ name: '', email: '', message: '' });
+
+    try {
+      const response = await fetch('http://localhost:3001/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Mensagem enviada com sucesso!");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast.error("Erro ao enviar a mensagem. Tente novamente.");
+      }
+    } catch (error) {
+      toast.error("Erro ao enviar a mensagem. Tente novamente.");
+    }
   };
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-grow pt-20">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-primary to-secondary py-16">
@@ -53,15 +68,15 @@ const Contato = () => {
                 <p className="text-olive/70 text-center">cafestg@gmail.com</p>
               </a>
 
-              <a href="https://www.instagram.com/riscocuts_recordlab/" target="_blank" rel="noopener noreferrer" 
-                 className="flex flex-col items-center p-6 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors">
+              <a href="https://www.instagram.com/riscocuts_recordlab/" target="_blank" rel="noopener noreferrer"
+                className="flex flex-col items-center p-6 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors">
                 <Instagram className="w-8 h-8 text-gold mb-4" />
                 <h3 className="text-lg font-semibold text-olive mb-2">Instagram</h3>
                 <p className="text-olive/70 text-center">@riscocuts_recordlab</p>
               </a>
 
               <a href="https://www.facebook.com/rafael.teixeira2/" target="_blank" rel="noopener noreferrer"
-                 className="flex flex-col items-center p-6 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors">
+                className="flex flex-col items-center p-6 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors">
                 <Facebook className="w-8 h-8 text-gold mb-4" />
                 <h3 className="text-lg font-semibold text-olive mb-2">Facebook</h3>
                 <p className="text-olive/70 text-center">Rafael Teixeira</p>
