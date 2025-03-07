@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -38,7 +39,7 @@ const Navbar = () => {
           <div className="md:hidden bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link to="/" className="block px-3 py-2 text-olive hover:text-gold transition-colors uppercase text-sm tracking-wider">Home</Link>
-              <Link to="/metodologia" className="block px-3 py-2 text-olive hover:text-gold transition-colors uppercase text-sm tracking-wider">Metodologia</Link>
+              <Link to="/metodologia/1" className="block px-3 py-2 text-olive hover:text-gold transition-colors uppercase text-sm tracking-wider">Metodologia</Link>
               <Link to="/servicos/1" className="block px-3 py-2 text-olive hover:text-gold transition-colors uppercase text-sm tracking-wider">Serviços</Link>
               <Link to="/sobre-nos" className="block px-3 py-2 text-olive hover:text-gold transition-colors uppercase text-sm tracking-wider">Sobre Nós</Link>
               <Link to="/contato" className="block px-3 py-2 text-olive hover:text-gold transition-colors uppercase text-sm tracking-wider">Contato</Link>
