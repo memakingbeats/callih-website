@@ -1,3 +1,4 @@
+
 // server.js
 const express = require('express');
 const nodemailer = require('nodemailer');
@@ -11,8 +12,8 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'cafestg@gmail.com', // Seu e-mail do Gmail
-      pass: 'gech grza vwld qsvr', // Cole a senha de app aqui
+      user: 'aconsultoriadesaude@gmail.com', // Atualizado para o email correto
+      pass: 'gech grza vwld qsvr', // Senha de app
     },
   });
 
@@ -21,8 +22,8 @@ app.post('/send-email', (req, res) => {
   const { name, email, message } = req.body;
 
   const mailOptions = {
-    from: 'cafestg@gmail.com', // Remetente
-    to: 'cafestg@gmail.com', // Destinatário
+    from: 'aconsultoriadesaude@gmail.com', // Remetente atualizado
+    to: 'aconsultoriadesaude@gmail.com', // Destinatário atualizado
     subject: `Nova mensagem de ${name}`, // Assunto do e-mail
     text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`, // Corpo do e-mail
   };
