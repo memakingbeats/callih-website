@@ -195,7 +195,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Home Care Section */}
+      // No seu Index.js, adicione a seção de Metodologia:
+
+      {/* Metodologia Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -210,19 +212,19 @@ const Index = () => {
           {/* Grid com 4 colunas em desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Card 1 */}
-            <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+            <div
+              className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => navigate('/metodologia/1')} // Redireciona para a página de metodologia com ID 1
+            >
               <img
                 src="/images/canva1.png"
-                alt="Dieta"
+                alt="Entendimento do Contexto"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-olive">Entendimento do Contexto</h3>
                 <p className="text-olive/70 mb-4">
-                  Realização de reunião inicial com o objetivo de compreender a cultura organizacional,
-                  identificar os objetivos estratégicos e
-                  compreender as dificuldades e desafios
-                  específicos enfrentados.
+                  Realização de reunião inicial com o objetivo de compreender a cultura organizacional, identificar os objetivos estratégicos e compreender as dificuldades e desafios específicos enfrentados.
                 </p>
                 <a href="#" className="text-gold hover:text-gold/80 transition-colors">
                   Mais detalhes →
@@ -231,19 +233,19 @@ const Index = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+            <div
+              className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => navigate('/metodologia/2')} // Redireciona para a página de metodologia com ID 2
+            >
               <img
                 src="/images/canva3.png"
-                alt="Medicações Especiais"
+                alt="Análise de Gargalos e Ineficiências"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-olive">Análise de Gargalos e Ineficiências</h3>
                 <p className="text-olive/70 mb-4">
-                  Realização de análise minuciosa das rotinas
-                  e processos atuais, com foco na
-                  identificação de áreas problemáticas,
-                  gargalos e oportunidades de melhoria.
+                  Realização de análise minuciosa das rotinas e processos atuais, com foco na identificação de áreas problemáticas, gargalos e oportunidades de melhoria.
                 </p>
                 <a href="#" className="text-gold hover:text-gold/80 transition-colors">
                   Mais detalhes →
@@ -252,10 +254,13 @@ const Index = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+            <div
+              className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => navigate('/metodologia/3')} // Redireciona para a página de metodologia com ID 3
+            >
               <img
                 src="/images/canva2.png"
-                alt="Antibióticos"
+                alt="Mapeamento de Processos"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
@@ -272,19 +277,19 @@ const Index = () => {
             </div>
 
             {/* Card 4 */}
-            <div className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+            <div
+              className="bg-secondary/20 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => navigate('/metodologia/4')} // Redireciona para a página de metodologia com ID 4
+            >
               <img
                 src="/images/palestra.jpg"
-                alt="Outro Serviço"
+                alt="Treinamento e Manuais"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-olive">Treinamento e Manuais</h3>
                 <p className="text-olive/70 mb-4">
-                  Realização de treinamentos personalizados, auxílio e suporte na
-                  criação de manuais detalhados para
-                  capacitar a equipe na implementação
-                  eficaz dos novos processos e melhorias.
+                  Realização de treinamentos personalizados, auxílio e suporte na criação de manuais detalhados para capacitar a equipe na implementação eficaz dos novos processos e melhorias.
                 </p>
                 <a href="#" className="text-gold hover:text-gold/80 transition-colors">
                   Mais detalhes →
@@ -293,13 +298,13 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Botão "Mais Serviços" */}
+          {/* Botão "Mais Detalhes" */}
           <div className="text-center mt-12">
             <button
-              onClick={scrollToServicos}
+              onClick={() => navigate('/metodologia')} // Redireciona para a página de metodologia
               className="bg-olive text-white px-8 py-3 rounded-md hover:bg-olive/90 transition-colors inline-block"
             >
-              Mais Serviços
+              Mais Detalhes
             </button>
           </div>
         </div>
