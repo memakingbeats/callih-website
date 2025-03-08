@@ -32,7 +32,7 @@ const services = [
   {
     id: 6,
     icon: Bath,
-    title: 'Gestão de Custos e Análise Financeira',
+    title: 'Gestão de Custos e Processos Financeiros',
   },
   {
     id: 7,
@@ -71,8 +71,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="animate-fadeInLeft">
-              <h2 className="text-white mb-4 transform transition-all duration-500 hover:scale-105" style={{ fontFamily: 'Manrope, sans-serif', fontSize: '20pt' }}>
-                Gestão em Saúde
+              <h2 className="text-white mb-4 transform transition-all duration-500 hover:scale-105" style={{ fontFamily: 'Manrope, sans-serif', fontSize: '17pt' }}>
+                CALLIH Gestão em Saúde
               </h2>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 transform transition-all duration-500 hover:scale-105">
                 TRANSFORMAMOS PROCESSOS PARA O SUCESSO DO SEU NEGÓCIO
@@ -97,7 +97,7 @@ const Index = () => {
             </div>
             <div className="animate-fadeInRight">
               <img
-                src="/images/LOGOCALLIH2.png"
+                src="/images/logoverde.png"
                 alt="Healthcare Professional with Stethoscope"
                 className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 mt-12 p-20"
               />

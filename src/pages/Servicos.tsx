@@ -35,7 +35,7 @@ const services = [
     description: 'O atendimento humanizado e a agilidade nos processos impactam diretamente na satisfação e fidelização dos pacientes. Organizamos e otimizamos a jornada do paciente dentro da clínica, desde o agendamento até o pós-atendimento.',
     detailedDescription: [
       'Redução do tempo de espera e otimização dos atendimentos.',
-      'Modernização da recepção e triagem para um fluxo organizado.',
+      'Triagem para um fluxo organizado.',
       'Implementação de estratégias para melhor acolhimento do paciente.',
       'Treinamento da equipe para aprimorar o relacionamento e atendimento.',
       'Definição de protocolos para feedbacks e acompanhamento pós-consulta.',
@@ -81,7 +81,7 @@ const services = [
   {
     id: 6,
     icon: Bath,
-    title: 'Gestão de Custos e Análise Financeira',
+    title: 'Gestão de Custos e Processos Financeiros',
     description: 'A falta de controle financeiro pode impactar diretamente a saúde da clínica ou consultório. Organizamos e estruturamos processos para garantir clareza sobre as entradas e saídas, permitindo uma visão precisa do faturamento, recebimentos e glosas.',
     detailedDescription: [
       'Organização e padronização do fluxo financeiro, garantindo controle total sobre receitas e despesas.',

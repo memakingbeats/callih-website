@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-semibold text-olive" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: "300" }}>CALLIH</Link>
+            <Link to="/" className="text-2xl font-semibold text-olive" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: "300" }}>CALLIH Gestão em Saúde</Link>
           </div>
 
           {/* Desktop Menu */}
