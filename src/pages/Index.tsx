@@ -195,7 +195,7 @@ const Index = () => {
         </div>
       </section>
 
-      // No seu Index.js, adicione a seção de Metodologia:
+
 
       {/* Metodologia Section */}
       <section className="py-16 bg-white">
