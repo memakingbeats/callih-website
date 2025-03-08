@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const metodologias = [
   {
@@ -91,26 +92,32 @@ const Metodologia = () => {
           </div>
         </section>
 
-        {/* Metodologia Details Section */}
-        <section className="py-16 bg-white">
+        {/* Metodologia Details Section - Now with gradient background */}
+        <section className="py-16 bg-gradient-to-b from-white to-gold/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {selectedMetodologia && (
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-olive mb-4">{selectedMetodologia.title}</h2>
-                <p className="text-olive/70 mb-8">{selectedMetodologia.description}</p>
-                <div className="text-left max-w-2xl mx-auto">
-                  <ul className="list-disc list-inside space-y-2 text-olive/70">
+              <div className="bg-white rounded-xl shadow-lg p-8 transition-all animate-fadeIn">
+                <div className="text-center mb-8">
+                  <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full mb-4 font-medium">
+                    Etapa {selectedMetodologia.id} de {metodologias.length}
+                  </span>
+                  <h2 className="text-3xl font-bold text-olive mb-4">{selectedMetodologia.title}</h2>
+                  <p className="text-olive/70 mb-6 text-lg">{selectedMetodologia.description}</p>
+                </div>
+                <div className="text-left max-w-2xl mx-auto bg-gold/5 p-6 rounded-lg border border-gold/10">
+                  <h3 className="font-semibold text-olive text-xl mb-4">O que inclui:</h3>
+                  <ul className="list-disc list-inside space-y-3 text-olive/80">
                     {selectedMetodologia.detailedDescription.map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <li key={index} className="leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
               </div>
             )}
 
-            {/* Carousel Section */}
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold text-olive mb-8 text-center">Mais Metodologias</h3>
+            {/* Carousel Section - Now with a different background */}
+            <div className="mt-16 bg-olive/5 py-12 px-6 rounded-xl">
+              <h3 className="text-2xl font-bold text-olive mb-10 text-center">Nossa Metodologia Completa</h3>
               <div className="relative">
                 <div className="overflow-hidden">
                   <div
@@ -120,9 +127,14 @@ const Metodologia = () => {
                     {metodologias.map((metodologia) => (
                       <div key={metodologia.id} className="w-full flex-shrink-0 px-4">
                         <div
-                          className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all h-full text-center cursor-pointer"
+                          className={`bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all h-full text-center cursor-pointer
+                            ${parseInt(metodologiaId) === metodologia.id ? 'ring-2 ring-gold' : ''}
+                          `}
                           onClick={() => navigate(`/metodologia/${metodologia.id}`)}
                         >
+                          <div className="inline-flex items-center justify-center w-12 h-12 mb-4 bg-gold/10 rounded-full">
+                            <span className="text-gold font-bold">{metodologia.id}</span>
+                          </div>
                           <h3 className="text-xl font-semibold text-olive">{metodologia.title}</h3>
                         </div>
                       </div>
@@ -130,18 +142,20 @@ const Metodologia = () => {
                   </div>
                 </div>
 
-                {/* Botões de navegação */}
+                {/* Improved navigation buttons */}
                 <button
                   onClick={prevSlide}
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
+                  aria-label="Previous methodology"
                 >
-                  &lt;
+                  <ChevronLeft className="w-5 h-5 text-gold" />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gold"
+                  aria-label="Next methodology"
                 >
-                  &gt;
+                  <ChevronRight className="w-5 h-5 text-gold" />
                 </button>
               </div>
             </div>

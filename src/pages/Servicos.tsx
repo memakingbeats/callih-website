@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -11,7 +12,9 @@ import {
   Bath,
   Heart,
   Baby,
-  UserPlus
+  UserPlus,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 const services = [
@@ -160,26 +163,34 @@ const Servicos = () => {
           </div>
         </section>
 
-        {/* Service Details Section */}
-        <section className="py-16 bg-white">
+        {/* Service Details Section - Now with gradient background */}
+        <section className="py-16 bg-gradient-to-b from-white to-secondary/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {selectedService && (
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-olive mb-4">{selectedService.title}</h2>
-                <p className="text-olive/70 mb-8">{selectedService.description}</p>
-                <div className="text-left max-w-2xl mx-auto">
-                  <ul className="list-disc list-inside space-y-2 text-olive/70">
+              <div className="bg-white rounded-xl shadow-lg p-8 transition-all animate-fadeIn">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-primary/10 rounded-full">
+                    {selectedService.icon && React.createElement(selectedService.icon, { 
+                      className: "w-8 h-8 text-primary" 
+                    })}
+                  </div>
+                  <h2 className="text-3xl font-bold text-olive mb-4">{selectedService.title}</h2>
+                  <p className="text-olive/70 mb-8 text-lg">{selectedService.description}</p>
+                </div>
+                <div className="text-left max-w-2xl mx-auto bg-olive/5 p-6 rounded-lg">
+                  <h3 className="font-semibold text-olive text-xl mb-4">Detalhes do serviço:</h3>
+                  <ul className="list-disc list-inside space-y-3 text-olive/80">
                     {selectedService.detailedDescription.map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <li key={index} className="leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
               </div>
             )}
 
-            {/* Carousel Section */}
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold text-olive mb-8 text-center">Mais Serviços</h3>
+            {/* Carousel Section - Now with a different background */}
+            <div className="mt-16 bg-primary/5 py-12 px-6 rounded-xl">
+              <h3 className="text-2xl font-bold text-olive mb-10 text-center">Conheça Nossos Outros Serviços</h3>
               <div className="relative">
                 <div className="overflow-hidden">
                   <div
@@ -191,7 +202,9 @@ const Servicos = () => {
                       return (
                         <div key={service.id} className="w-full flex-shrink-0 px-4">
                           <div
-                            className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all h-full text-center cursor-pointer"
+                            className={`bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all h-full text-center cursor-pointer
+                              ${parseInt(serviceId) === service.id ? 'ring-2 ring-primary' : ''}
+                            `}
                             onClick={() => navigate(`/servicos/${service.id}`)}
                           >
                             <div className="flex justify-center mb-4">
@@ -205,18 +218,20 @@ const Servicos = () => {
                   </div>
                 </div>
 
-                {/* Botões de navegação */}
+                {/* Improved navigation buttons */}
                 <button
                   onClick={prevSlide}
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                  aria-label="Previous service"
                 >
-                  &lt;
+                  <ChevronLeft className="w-5 h-5 text-primary" />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                  aria-label="Next service"
                 >
-                  &gt;
+                  <ChevronRight className="w-5 h-5 text-primary" />
                 </button>
               </div>
             </div>
