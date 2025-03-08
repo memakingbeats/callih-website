@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-white"></h3>
+            <h3 className="text-xl font-semibold mb-4 text-white">Links</h3>
             <ul className="space-y-2 text-white">
               <li><Link to="/" className="hover:text-gold transition-colors text-white">Home</Link></li>
               <li><Link to="/servicos/1" className="hover:text-gold transition-colors text-white">Serviços</Link></li>
