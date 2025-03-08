@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -12,6 +12,16 @@ const Footer = () => {
             <p className="text-secondary/80 text-white ">
               TRANSFORMAMOS PROCESSOS PARA O SUCESSO DO SEU NEGÓCIO
             </p>
+            
+            {/* Social Media Icons */}
+            <div className="flex space-x-4 mt-4">
+              <a href="https://www.instagram.com/callih.consultoria/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
+                <Instagram size={24} className="hover:scale-110 transition-transform" />
+              </a>
+              <a href="https://www.facebook.com/callih.consultoria/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
+                <Facebook size={24} className="hover:scale-110 transition-transform" />
+              </a>
+            </div>
           </div>
 
 
