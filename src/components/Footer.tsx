@@ -15,10 +15,10 @@ const Footer = () => {
 
             {/* Social Media Icons */}
             <div className="flex space-x-4 mt-4">
-              <a href="https://www.instagram.com/callihgestao/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
+              <a href="https://www.instagram.com/callih.consultoria/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
                 <Instagram size={24} className="hover:scale-110 transition-transform" />
               </a>
-              <a href="https://www.facebook.com/callihgestao" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
+              <a href="https://www.facebook.com/callihconsultoria" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
                 <Facebook size={24} className="hover:scale-110 transition-transform" />
               </a>
             </div>

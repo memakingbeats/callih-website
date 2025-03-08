@@ -68,14 +68,14 @@ const Contato = () => {
                 <p className="text-olive/70 text-center">aconsultoriadesaude@gmail.com</p>
               </a>
 
-              <a href="https://www.instagram.com/callihgestao/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/callih.consultoria/" target="_blank" rel="noopener noreferrer"
                 className="flex flex-col items-center p-6 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors">
                 <Instagram className="w-8 h-8 text-gold mb-4" />
                 <h3 className="text-lg font-semibold text-olive mb-2">Instagram</h3>
                 <p className="text-olive/70 text-center">@callih.consultoria</p>
               </a>
 
-              <a href="https://www.facebook.com/callihgestao" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.facebook.com/callihconsultoria" target="_blank" rel="noopener noreferrer"
                 className="flex flex-col items-center p-6 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors">
                 <Facebook className="w-8 h-8 text-gold mb-4" />
                 <h3 className="text-lg font-semibold text-olive mb-2">Facebook</h3>
