@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -121,8 +121,6 @@ const services = [
   },
 ];
 
-
-
 const Servicos = () => {
   const { serviceId } = useParams();
   const navigate = useNavigate();
@@ -151,11 +149,11 @@ const Servicos = () => {
       <Navbar />
 
       <main className="flex-grow pt-20">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-primary to-secondary py-16">
+        {/* Hero Section with Enhanced Gradient */}
+        <section className="bg-gradient-to-r from-primary via-primary/90 to-secondary py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-white mb-4">Nossos Serviços</h1>
+              <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-md">Nossos Serviços</h1>
               <p className="text-lg text-white/90 max-w-2xl mx-auto">
                 Oferecemos uma ampla gama de serviços de saúde especializados para atender às suas necessidades.
               </p>
@@ -163,38 +161,45 @@ const Servicos = () => {
           </div>
         </section>
 
-        {/* Service Details Section - Now with gradient background */}
+        {/* Service Details Section - With improved visual depth */}
         <section className="py-16 bg-gradient-to-b from-white to-secondary/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {selectedService && (
-              <div className="bg-white rounded-xl shadow-lg p-8 transition-all animate-fadeIn">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-primary/10 rounded-full">
+              <div className="bg-white rounded-xl shadow-xl p-8 transition-all animate-fadeIn border border-gray-100 hover:border-secondary">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center justify-center w-20 h-20 mb-6 bg-primary/10 rounded-full shadow-inner">
                     {selectedService.icon && React.createElement(selectedService.icon, { 
-                      className: "w-8 h-8 text-primary" 
+                      className: "w-10 h-10 text-primary" 
                     })}
                   </div>
-                  <h2 className="text-3xl font-bold text-olive mb-4">{selectedService.title}</h2>
-                  <p className="text-olive/70 mb-8 text-lg">{selectedService.description}</p>
+                  <h2 className="text-3xl font-bold text-olive mb-6">{selectedService.title}</h2>
+                  <p className="text-olive/70 mb-8 text-lg max-w-3xl mx-auto leading-relaxed">{selectedService.description}</p>
                 </div>
-                <div className="text-left max-w-2xl mx-auto bg-olive/5 p-6 rounded-lg">
-                  <h3 className="font-semibold text-olive text-xl mb-4">Detalhes do serviço:</h3>
-                  <ul className="list-disc list-inside space-y-3 text-olive/80">
+                <div className="text-left max-w-2xl mx-auto bg-gradient-to-br from-olive/5 to-gold/5 p-8 rounded-lg shadow-sm border border-gold/10">
+                  <h3 className="font-semibold text-olive text-xl mb-6 flex items-center">
+                    <span className="w-8 h-1 bg-gold mr-3 rounded-full"></span>
+                    Detalhes do serviço
+                    <span className="w-8 h-1 bg-gold ml-3 rounded-full"></span>
+                  </h3>
+                  <ul className="list-disc list-inside space-y-4 text-olive/80">
                     {selectedService.detailedDescription.map((item, index) => (
-                      <li key={index} className="leading-relaxed">{item}</li>
+                      <li key={index} className="leading-relaxed pl-2">{item}</li>
                     ))}
                   </ul>
                 </div>
               </div>
             )}
 
-            {/* Carousel Section - Now with a different background */}
-            <div className="mt-16 bg-primary/5 py-12 px-6 rounded-xl">
-              <h3 className="text-2xl font-bold text-olive mb-10 text-center">Conheça Nossos Outros Serviços</h3>
-              <div className="relative">
+            {/* Carousel Section - With improved visual depth */}
+            <div className="mt-20 bg-gradient-to-r from-primary/5 via-olive/5 to-primary/5 py-16 px-8 rounded-xl shadow-inner">
+              <h3 className="text-2xl font-bold text-olive mb-12 text-center relative">
+                <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-4 w-20 h-1 bg-gold rounded-full"></span>
+                Conheça Nossos Outros Serviços
+              </h3>
+              <div className="relative mt-8">
                 <div className="overflow-hidden">
                   <div
-                    className="flex transition-transform duration-300 ease-in-out"
+                    className="flex transition-transform duration-500 ease-in-out"
                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                   >
                     {services.map((service) => {
@@ -202,13 +207,15 @@ const Servicos = () => {
                       return (
                         <div key={service.id} className="w-full flex-shrink-0 px-4">
                           <div
-                            className={`bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all h-full text-center cursor-pointer
-                              ${parseInt(serviceId) === service.id ? 'ring-2 ring-primary' : ''}
+                            className={`bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all h-full text-center cursor-pointer transform hover:-translate-y-1 duration-300
+                              ${parseInt(serviceId) === service.id ? 'ring-2 ring-gold' : 'hover:ring-1 hover:ring-primary/30'}
                             `}
                             onClick={() => navigate(`/servicos/${service.id}`)}
                           >
-                            <div className="flex justify-center mb-4">
-                              <Icon className="w-12 h-12 text-primary" />
+                            <div className="flex justify-center mb-6">
+                              <div className="p-4 bg-gradient-to-br from-primary/10 to-gold/10 rounded-full">
+                                <Icon className="w-12 h-12 text-primary" />
+                              </div>
                             </div>
                             <h3 className="text-xl font-semibold text-olive">{service.title}</h3>
                           </div>
@@ -221,17 +228,17 @@ const Servicos = () => {
                 {/* Improved navigation buttons */}
                 <button
                   onClick={prevSlide}
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 duration-300"
                   aria-label="Previous service"
                 >
-                  <ChevronLeft className="w-5 h-5 text-primary" />
+                  <ChevronLeft className="w-6 h-6 text-primary" />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 duration-300"
                   aria-label="Next service"
                 >
-                  <ChevronRight className="w-5 h-5 text-primary" />
+                  <ChevronRight className="w-6 h-6 text-primary" />
                 </button>
               </div>
             </div>
