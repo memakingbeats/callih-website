@@ -301,7 +301,7 @@ const Index = () => {
           {/* Botão "Mais Detalhes" */}
           <div className="text-center mt-12">
             <button
-              onClick={() => navigate('/metodologia')} // Redireciona para a página de metodologia
+              onClick={() => navigate('/metodologia/1')} // Redireciona para a página de metodologia com ID 1
               className="bg-olive text-white px-8 py-3 rounded-md hover:bg-olive/90 transition-colors inline-block"
             >
               Mais Detalhes
