@@ -99,7 +99,7 @@ const Index = () => {
               <img
                 src="/images/logoverde.png"
                 alt="Healthcare Professional with Stethoscope"
-                className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 mt-12 p-20"
+                className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 mt-12 p-0 w-full h-auto"
               />
             </div>
           </div>
