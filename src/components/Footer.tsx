@@ -1,4 +1,5 @@
-import { WhatsApp, Mail, MapPin, Instagram, Facebook } from 'lucide-react';
+
+import { MessageSquare, Mail, MapPin, Instagram, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -27,7 +28,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4 text-white">Contato</h3>
             <div className="space-y-3">
               <a href="https://wa.me/5551996782452" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 text-white hover:text-gold transition-colors">
-                <WhatsApp size={20} className="text-white" />
+                <MessageSquare size={20} className="text-white" />
                 <span>(51) 99678-2452</span>
               </a>
               <div className="flex items-center space-x-3 text-white">
