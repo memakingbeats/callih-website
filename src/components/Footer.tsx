@@ -28,10 +28,10 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4 text-white">Contato</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-white">
+              <a href="https://wa.me/5551996782452" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 text-white hover:text-gold transition-colors">
                 <Phone size={20} className="text-white" />
                 <span>(51) 99678-2452</span>
-              </div>
+              </a>
               <div className="flex items-center space-x-3 text-white">
                 <Mail size={20} className="text-white" />
                 <span>aconsultoriadesaude@gmail.com</span>
