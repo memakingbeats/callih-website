@@ -1,3 +1,4 @@
+
 import { Mail, MapPin, Instagram, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,10 +17,10 @@ const Footer = () => {
 
             {/* Social Media Icons */}
             <div className="flex space-x-4 mt-4">
-              <a href="https://www.instagram.com/callihgestao/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
+              <a href="https://www.instagram.com/callihgestao/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors">
                 <Instagram size={24} className="hover:scale-110 transition-transform" />
               </a>
-              <a href="https://www.facebook.com/callihgestao" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
+              <a href="https://www.facebook.com/callihgestao" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors">
                 <Facebook size={24} className="hover:scale-110 transition-transform" />
               </a>
             </div>
@@ -28,7 +29,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4 text-white">Contato</h3>
             <div className="space-y-3">
-              <a href="https://wa.me/5551996782452" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 text-white hover:text-gold transition-colors">
+              <a href="https://wa.me/5551996782452" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 text-white hover:text-primary transition-colors">
                 <FontAwesomeIcon icon={faWhatsapp} className="text-white" style={{ width: '20px', height: '20px' }} />
                 <span>(51) 99678-2452</span>
               </a>
@@ -46,10 +47,10 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4 text-white">Links</h3>
             <ul className="space-y-2 text-white">
-              <li><Link to="/" className="hover:text-gold transition-colors text-white">Home</Link></li>
-              <li><Link to="/servicos/1" className="hover:text-gold transition-colors text-white">Serviços</Link></li>
-              <li><Link to="/metodologia/1" className="hover:text-gold transition-colors text-white">Metodologia</Link></li>
-              <li><Link to="/sobre-nos" className="hover:text-gold transition-colors text-white">Sobre Nós</Link></li>
+              <li><Link to="/" className="hover:text-primary transition-colors text-white">Home</Link></li>
+              <li><Link to="/servicos/1" className="hover:text-primary transition-colors text-white">Serviços</Link></li>
+              <li><Link to="/metodologia/1" className="hover:text-primary transition-colors text-white">Metodologia</Link></li>
+              <li><Link to="/sobre-nos" className="hover:text-primary transition-colors text-white">Sobre Nós</Link></li>
             </ul>
           </div>
         </div>
