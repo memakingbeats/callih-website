@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Phone, Mail, Instagram, Facebook, MapPin, Send } from 'lucide-react';
+import { WhatsApp, Mail, Instagram, Facebook, MapPin, Send } from 'lucide-react';
 import { toast } from "sonner";
 
 const Contato = () => {
@@ -58,8 +58,8 @@ const Contato = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
               <a href="https://wa.me/5551996782452" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center p-6 bg-secondary/20 rounded-lg hover:bg-secondary/30 transition-colors">
-                <Phone className="w-8 h-8 text-gold mb-4" />
-                <h3 className="text-lg font-semibold text-olive mb-2">Telefone</h3>
+                <WhatsApp className="w-8 h-8 text-gold mb-4" />
+                <h3 className="text-lg font-semibold text-olive mb-2">WhatsApp</h3>
                 <p className="text-olive/70 text-center">(51) 99678-2452</p>
               </a>
 
