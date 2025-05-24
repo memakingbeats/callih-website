@@ -19,7 +19,7 @@ const Contato = () => {
 
     try {
       // Substitua pelo endpoint do Formspree
-      const response = await fetch('https://formspree.io/f/mblgrwqj', {
+      const response = await fetch('https://formspree.io/f/xblgdnng', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
