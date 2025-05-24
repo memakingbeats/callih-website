@@ -1,3 +1,4 @@
+
 import { Heart, UserPlus, Stethoscope, Bath, UserCog, Pill, Activity, HeartPulse } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -69,19 +70,28 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-r from-primary to-secondary overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            {/* Text Content - Left */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Text Content with Logo Above - Left */}
             <div className="animate-fadeInLeft">
-              <h2 className="text-white mb-4 transform transition-all duration-500 hover:scale-105" style={{ fontFamily: 'Manrope, sans-serif', fontSize: '17pt' }}>
+              {/* Logo centralizada e menor acima do texto */}
+              <div className="flex justify-center mb-8">
+                <img
+                  src="/images/logoverde.png"
+                  alt="CALLIH Logo"
+                  className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 w-32 h-auto"
+                />
+              </div>
+              
+              <h2 className="text-white mb-4 transform transition-all duration-500 hover:scale-105 text-center" style={{ fontFamily: 'Manrope, sans-serif', fontSize: '17pt' }}>
                 CALLIH Gestão em Saúde
               </h2>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 transform transition-all duration-500 hover:scale-105">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 transform transition-all duration-500 hover:scale-105 text-center">
                 TRANSFORMAMOS PROCESSOS PARA O SUCESSO DO SEU NEGÓCIO
               </h1>
-              <p className="text-lg text-white/90 mb-8 transform transition-all duration-500 hover:scale-105">
+              <p className="text-lg text-white/90 mb-8 transform transition-all duration-500 hover:scale-105 text-center">
                 Descomplique a gestão da sua clínica e foque no crescimento!
               </p>
-              <div className="space-x-4">
+              <div className="space-x-4 text-center">
                 <button
                   onClick={scrollToServicos}
                   className="bg-gold text-white px-6 py-3 rounded-md hover:bg-gold/90 transition-colors transform hover:scale-105 duration-300"
@@ -97,21 +107,12 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Logo - Center */}
-            <div className="flex justify-center animate-fadeInRight">
-              <img
-                src="/images/logoverde.png"
-                alt="CALLIH Logo"
-                className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 w-full max-w-sm h-auto"
-              />
-            </div>
-
             {/* Header Photo - Right */}
             <div className="flex justify-center md:justify-end animate-fadeInRight">
               <img
                 src="/images/fotoHeader.png"
                 alt="Healthcare Professional"
-                className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 w-full max-w-sm h-auto"
+                className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 w-full max-w-md h-auto"
               />
             </div>
           </div>
