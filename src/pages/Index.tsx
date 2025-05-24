@@ -73,15 +73,8 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Text Content with Logo Above - Left */}
             <div className="animate-fadeInLeft">
-              {/* Logo centralizada e menor acima do texto */}
-              <div className="flex justify-center mb-8">
-                <img
-                  src="/images/logoverde.png"
-                  alt="CALLIH Logo"
-                  className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 w-32 h-auto"
-                />
-              </div>
-              
+
+
               <h2 className="text-white mb-4 transform transition-all duration-500 hover:scale-105 text-center" style={{ fontFamily: 'Manrope, sans-serif', fontSize: '17pt' }}>
                 CALLIH Gestão em Saúde
               </h2>

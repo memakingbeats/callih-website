@@ -9,22 +9,24 @@ const Navbar = () => {
   return (
     <nav className="bg-white/80 backdrop-blur-sm shadow-sm fixed w-full z-20 top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-30">
+          {/* Logo centralizada e menor acima do texto */}
+          <div className="flex justify-center mr-4">
+            <img
+              src="/images/logoverde.png"
+              alt="CALLIH Logo"
+              className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-80 w-20 h-auto"
+            />
+          </div>
           {/* Logo Section - Centered and Smaller */}
           <div className="flex-1 flex justify-center md:justify-start">
+
             <Link to="/" className="text-xl md:text-2xl font-semibold text-olive" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: "300" }}>
               CALLIH Gestão em Saúde
             </Link>
           </div>
 
-          {/* Header Image - Right Side (Hidden on Mobile) */}
-          <div className="hidden md:block flex-shrink-0 ml-8">
-            <img 
-              src="/images/fotoHeader.png" 
-              alt="Header" 
-              className="h-16 w-auto object-contain rounded-lg shadow-sm"
-            />
-          </div>
+
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 ml-8">
