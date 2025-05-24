@@ -59,7 +59,7 @@ const SobreNos = () => {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="/images/socia.jpeg"
+                    src="/images/AlineFoto.jpeg"
                     alt="Dra. Maria Silva"
                     className="w-full h-full object-cover"
                   />
@@ -81,7 +81,7 @@ const SobreNos = () => {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="/images/carla.jpeg"
+                    src="/images/CarlaFoto.jpeg"
                     alt="Dra. Ana Santos"
                     className="w-full h-full object-cover"
                   />

@@ -157,7 +157,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className="rounded overflow-hidden w-64 h-96 flex-shrink-0"> {/* Quadrado maior */}
                 <img
-                  src="/images/socia.jpeg"
+                  src="/images/AlineFoto.jpeg"
                   alt="Dra. Maria Silva"
                   className="w-full h-full object-cover"
                 />
@@ -179,7 +179,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row gap-6 items-center">
               <div className="rounded overflow-hidden w-64 h-96 flex-shrink-0"> {/* Quadrado maior */}
                 <img
-                  src="/images/Carla2.jpg"
+                  src="/images/CarlaFoto.jpeg"
                   alt="Dra. Ana Santos"
                   className="w-full h-full object-cover"
                 />
@@ -263,7 +263,7 @@ const Index = () => {
               onClick={() => navigate('/metodologia/3')} // Redireciona para a página de metodologia com ID 3
             >
               <img
-                src="/images/canva2.png"
+                src="/images/Callih_Retrato.jpg"
                 alt="Mapeamento de Processos"
                 className="w-full h-48 object-cover"
               />
