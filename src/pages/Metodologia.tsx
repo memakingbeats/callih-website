@@ -57,13 +57,15 @@ const Metodologia = () => {
   const navigate = useNavigate();
   const [selectedMetodologia, setSelectedMetodologia] = useState(null);
 
-  // Efeito para carregar a metodologia selecionada e rolar para o topo
+  // Efeito para carregar a metodologia selecionada apenas na primeira renderização
   useEffect(() => {
     const metodologia = metodologias.find((m) => m.id === parseInt(metodologiaId));
     setSelectedMetodologia(metodologia);
 
-    // Rola a página para o topo sempre que o metodologiaId mudar
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Rola a página para o topo apenas se não há metodologia selecionada anteriormente
+    if (!selectedMetodologia) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }, [metodologiaId]);
 
   const navigateToPrevious = () => {

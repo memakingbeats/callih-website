@@ -126,13 +126,15 @@ const Servicos = () => {
   const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState(null);
 
-  // Efeito para carregar o serviço selecionado e rolar para o topo
+  // Efeito para carregar o serviço selecionado apenas na primeira renderização
   useEffect(() => {
     const service = services.find((s) => s.id === parseInt(serviceId));
     setSelectedService(service);
 
-    // Rola a página para o topo sempre que o serviceId mudar
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Rola a página para o topo apenas se não há serviço selecionado anteriormente
+    if (!selectedService) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }, [serviceId]);
 
   const navigateToPrevious = () => {
