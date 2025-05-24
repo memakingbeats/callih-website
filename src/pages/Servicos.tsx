@@ -125,7 +125,6 @@ const Servicos = () => {
   const { serviceId } = useParams();
   const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   // Efeito para carregar o serviço selecionado e rolar para o topo
   useEffect(() => {
@@ -136,12 +135,16 @@ const Servicos = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [serviceId]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % services.length);
+  const navigateToPrevious = () => {
+    const currentId = parseInt(serviceId);
+    const prevId = currentId > 1 ? currentId - 1 : services.length;
+    navigate(`/servicos/${prevId}`);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
+  const navigateToNext = () => {
+    const currentId = parseInt(serviceId);
+    const nextId = currentId < services.length ? currentId + 1 : 1;
+    navigate(`/servicos/${nextId}`);
   };
 
   return (
@@ -161,12 +164,29 @@ const Servicos = () => {
           </div>
         </section>
 
-        {/* Service Details Section - With improved visual depth */}
+        {/* Service Details Section - With navigation arrows */}
         <section className="py-16 bg-gradient-to-b from-white to-secondary/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {selectedService && (
-              <div className="bg-white rounded-xl shadow-xl p-8 transition-all animate-fadeIn border border-gray-100 hover:border-secondary">
-                <div className="text-center mb-8">
+              <div className="relative bg-white rounded-xl shadow-xl p-8 transition-all animate-fadeIn border border-gray-100 hover:border-secondary">
+                {/* Navigation Arrows */}
+                <button
+                  onClick={navigateToPrevious}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 duration-300 z-10"
+                  aria-label="Serviço anterior"
+                >
+                  <ChevronLeft className="w-6 h-6 text-primary" />
+                </button>
+                
+                <button
+                  onClick={navigateToNext}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 duration-300 z-10"
+                  aria-label="Próximo serviço"
+                >
+                  <ChevronRight className="w-6 h-6 text-primary" />
+                </button>
+
+                <div className="text-center mb-8 px-16">
                   <div className="inline-flex items-center justify-center w-20 h-20 mb-6 bg-primary/10 rounded-full shadow-inner">
                     {selectedService.icon && React.createElement(selectedService.icon, { 
                       className: "w-10 h-10 text-primary" 
@@ -189,59 +209,6 @@ const Servicos = () => {
                 </div>
               </div>
             )}
-
-            {/* Carousel Section - With improved visual depth */}
-            <div className="mt-20 bg-gradient-to-r from-primary/5 via-olive/5 to-primary/5 py-16 px-8 rounded-xl shadow-inner">
-              <h3 className="text-2xl font-bold text-olive mb-12 text-center relative">
-                <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-4 w-20 h-1 bg-gold rounded-full"></span>
-                Conheça Nossos Outros Serviços
-              </h3>
-              <div className="relative mt-8">
-                <div className="overflow-hidden">
-                  <div
-                    className="flex transition-transform duration-500 ease-in-out"
-                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                  >
-                    {services.map((service) => {
-                      const Icon = service.icon;
-                      return (
-                        <div key={service.id} className="w-full flex-shrink-0 px-4">
-                          <div
-                            className={`bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all h-full text-center cursor-pointer transform hover:-translate-y-1 duration-300
-                              ${parseInt(serviceId) === service.id ? 'ring-2 ring-gold' : 'hover:ring-1 hover:ring-primary/30'}
-                            `}
-                            onClick={() => navigate(`/servicos/${service.id}`)}
-                          >
-                            <div className="flex justify-center mb-6">
-                              <div className="p-4 bg-gradient-to-br from-primary/10 to-gold/10 rounded-full">
-                                <Icon className="w-12 h-12 text-primary" />
-                              </div>
-                            </div>
-                            <h3 className="text-xl font-semibold text-olive">{service.title}</h3>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Improved navigation buttons */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 duration-300"
-                  aria-label="Previous service"
-                >
-                  <ChevronLeft className="w-6 h-6 text-primary" />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary hover:scale-110 duration-300"
-                  aria-label="Next service"
-                >
-                  <ChevronRight className="w-6 h-6 text-primary" />
-                </button>
-              </div>
-            </div>
           </div>
         </section>
       </main>

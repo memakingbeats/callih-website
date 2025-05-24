@@ -56,7 +56,6 @@ const Metodologia = () => {
   const { metodologiaId } = useParams();
   const navigate = useNavigate();
   const [selectedMetodologia, setSelectedMetodologia] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   // Efeito para carregar a metodologia selecionada e rolar para o topo
   useEffect(() => {
@@ -67,12 +66,16 @@ const Metodologia = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [metodologiaId]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % metodologias.length);
+  const navigateToPrevious = () => {
+    const currentId = parseInt(metodologiaId);
+    const prevId = currentId > 1 ? currentId - 1 : metodologias.length;
+    navigate(`/metodologia/${prevId}`);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + metodologias.length) % metodologias.length);
+  const navigateToNext = () => {
+    const currentId = parseInt(metodologiaId);
+    const nextId = currentId < metodologias.length ? currentId + 1 : 1;
+    navigate(`/metodologia/${nextId}`);
   };
 
   return (
@@ -92,12 +95,29 @@ const Metodologia = () => {
           </div>
         </section>
 
-        {/* Metodologia Details Section - Enhanced with visual depth */}
+        {/* Metodologia Details Section - Enhanced with navigation arrows */}
         <section className="py-16 bg-gradient-to-b from-white to-gold/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {selectedMetodologia && (
-              <div className="bg-white rounded-xl shadow-xl p-8 transition-all animate-fadeIn border border-gray-100 hover:border-gold/30">
-                <div className="text-center mb-8">
+              <div className="relative bg-white rounded-xl shadow-xl p-8 transition-all animate-fadeIn border border-gray-100 hover:border-gold/30">
+                {/* Navigation Arrows */}
+                <button
+                  onClick={navigateToPrevious}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gold hover:scale-110 duration-300 z-10"
+                  aria-label="Metodologia anterior"
+                >
+                  <ChevronLeft className="w-6 h-6 text-gold" />
+                </button>
+                
+                <button
+                  onClick={navigateToNext}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gold hover:scale-110 duration-300 z-10"
+                  aria-label="Próxima metodologia"
+                >
+                  <ChevronRight className="w-6 h-6 text-gold" />
+                </button>
+
+                <div className="text-center mb-8 px-16">
                   <span className="inline-block px-6 py-2 bg-gold/10 text-gold rounded-full mb-6 font-medium shadow-inner">
                     Etapa {selectedMetodologia.id} de {metodologias.length}
                   </span>
@@ -118,54 +138,6 @@ const Metodologia = () => {
                 </div>
               </div>
             )}
-
-            {/* Carousel Section - Enhanced with visual depth */}
-            <div className="mt-20 bg-gradient-to-r from-olive/5 via-gold/5 to-olive/5 py-16 px-8 rounded-xl shadow-inner">
-              <h3 className="text-2xl font-bold text-olive mb-12 text-center relative">
-                <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-4 w-20 h-1 bg-gold rounded-full"></span>
-                Nossa Metodologia Completa
-              </h3>
-              <div className="relative mt-8">
-                <div className="overflow-hidden">
-                  <div
-                    className="flex transition-transform duration-500 ease-in-out"
-                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                  >
-                    {metodologias.map((metodologia) => (
-                      <div key={metodologia.id} className="w-full flex-shrink-0 px-4">
-                        <div
-                          className={`bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all h-full text-center cursor-pointer transform hover:-translate-y-1 duration-300
-                            ${parseInt(metodologiaId) === metodologia.id ? 'ring-2 ring-gold' : 'hover:ring-1 hover:ring-gold/30'}
-                          `}
-                          onClick={() => navigate(`/metodologia/${metodologia.id}`)}
-                        >
-                          <div className="inline-flex items-center justify-center w-16 h-16 mb-6 bg-gradient-to-br from-gold/20 to-gold/10 rounded-full shadow-inner">
-                            <span className="text-gold font-bold text-xl">{metodologia.id}</span>
-                          </div>
-                          <h3 className="text-xl font-semibold text-olive">{metodologia.title}</h3>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Improved navigation buttons */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gold hover:scale-110 duration-300"
-                  aria-label="Previous methodology"
-                >
-                  <ChevronLeft className="w-6 h-6 text-gold" />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gold hover:scale-110 duration-300"
-                  aria-label="Next methodology"
-                >
-                  <ChevronRight className="w-6 h-6 text-gold" />
-                </button>
-              </div>
-            </div>
           </div>
         </section>
       </main>
