@@ -69,7 +69,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-r from-primary to-secondary overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            {/* Text Content - Left */}
             <div className="animate-fadeInLeft">
               <h2 className="text-white mb-4 transform transition-all duration-500 hover:scale-105" style={{ fontFamily: 'Manrope, sans-serif', fontSize: '17pt' }}>
                 CALLIH Gestão em Saúde
@@ -95,11 +96,22 @@ const Index = () => {
                 </button>
               </div>
             </div>
-            <div className="animate-fadeInRight">
+
+            {/* Logo - Center */}
+            <div className="flex justify-center animate-fadeInRight">
               <img
                 src="/images/logoverde.png"
-                alt="Healthcare Professional with Stethoscope"
-                className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 mt-12 p-0 w-full h-auto"
+                alt="CALLIH Logo"
+                className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 w-full max-w-sm h-auto"
+              />
+            </div>
+
+            {/* Header Photo - Right */}
+            <div className="flex justify-center md:justify-end animate-fadeInRight">
+              <img
+                src="/images/fotoHeader.png"
+                alt="Healthcare Professional"
+                className="rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 w-full max-w-sm h-auto"
               />
             </div>
           </div>
@@ -194,8 +206,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-
 
       {/* Metodologia Section */}
       <section className="py-16 bg-white">
