@@ -1,8 +1,10 @@
 
-import { Heart, UserPlus, Stethoscope, Bath, UserCog, Pill, Activity, HeartPulse } from 'lucide-react';
+import { Heart, UserPlus, Stethoscope, Bath, UserCog, Pill, Activity, HeartPulse, Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Card, CardContent } from '../components/ui/card';
+import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
 
 const services = [
   {
@@ -286,7 +288,7 @@ const Index = () => {
               onClick={() => navigate('/metodologia/4')} // Redireciona para a página de metodologia com ID 4
             >
               <img
-                src="/images/palestra.jpg"
+                src="/images/palestra.png"
                 alt="Treinamento e Manuais"
                 className="w-full h-48 object-cover"
               />
@@ -310,6 +312,97 @@ const Index = () => {
             >
               Mais Detalhes
             </button>
+          </div>
+        </div>
+      </section>
+      {/* Depoimentos Section */}
+      <section className="py-16 bg-secondary/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-olive mb-4">Depoimentos</h2>
+            <p className="text-olive/80">
+              Veja o que nossos clientes dizem sobre nossos serviços
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Depoimento 1 */}
+            <Card className="bg-white hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <Avatar className="w-12 h-12">
+                    <AvatarImage src="/images/AlineFoto.jpeg" alt="Eduarda Vicente" />
+                    <AvatarFallback>EV</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-olive">Eduarda Vicente</h3>
+                    <p className="text-sm text-olive/60">1 avaliação</p>
+                    <div className="flex items-center gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                      <span className="text-sm text-olive/60 ml-2">7 meses atrás</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-olive/70 text-sm leading-relaxed">
+                  Realizam um trabalho excelente e com maestria, mulheres empoderadas que mostram seu potencial!
+                  Vale muito a pena o investimento na consultoria delas, pois o resultado é cem por cento positivo!
+                  Obrigada meninas pela ajuda no meu crescimento profissional neste meio!
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Depoimento 2 */}
+            <Card className="bg-white hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <Avatar className="w-12 h-12">
+                    <AvatarFallback className="bg-gray-500 text-white">A</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-olive">Andreia Christmann</h3>
+                    <p className="text-sm text-olive/60">4 avaliações</p>
+                    <div className="flex items-center gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                      <span className="text-sm text-olive/60 ml-2">9 meses atrás</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-olive/70 text-sm leading-relaxed">
+                  Super recomendo, profissionais capacitadas e comprometidas com resultados.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Depoimento 3 */}
+            <Card className="bg-white hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <Avatar className="w-12 h-12">
+                    <AvatarFallback className="bg-olive text-white">LZ</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-olive">Dr. Leonardo Zacher</h3>
+                    <p className="text-sm text-olive/60">Clínica Menezes & Zacher</p>
+                    <div className="flex items-center gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-olive/70 text-sm leading-relaxed">
+                  "Sou o Dr. Leonardo Zacher, da Clínica Menezes & Zacher, e tive o prazer de contratar a Callih para realizar uma análise completa da gestão do meu consultório.
+                  Eles foram responsáveis pelo treinamento da equipe, implementação de um prontuário eletrônico moderno e pela gestão financeira. A equipe da Callih é extremamente
+                  profissional e tem vasta experiência em gestão de clínicas de saúde. Fizeram um excelente trabalho que superou todas as expectativas. Recomendo fortemente a Callih
+                  para qualquer clínica que deseje aprimorar sua eficiência e qualidade no atendimento. Você pode encontrar mais sobre o trabalho deles no Instagram, no endereço
+                  @callihgestao."
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
