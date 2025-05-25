@@ -331,8 +331,7 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <Avatar className="w-12 h-12">
-                    <AvatarImage src="/images/AlineFoto.jpeg" alt="Eduarda Vicente" />
-                    <AvatarFallback>EV</AvatarFallback>
+                    <AvatarFallback className="bg-gray-500 text-white">EV</AvatarFallback>
                   </Avatar>
                   <div className="flex-1">
                     <h3 className="font-semibold text-olive">Eduarda Vicente</h3>
@@ -358,7 +357,7 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <Avatar className="w-12 h-12">
-                    <AvatarFallback className="bg-gray-500 text-white">A</AvatarFallback>
+                    <AvatarFallback className="bg-gray-500 text-white">AC</AvatarFallback>
                   </Avatar>
                   <div className="flex-1">
                     <h3 className="font-semibold text-olive">Andreia Christmann</h3>
@@ -382,7 +381,7 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <Avatar className="w-12 h-12">
-                    <AvatarFallback className="bg-olive text-white">LZ</AvatarFallback>
+                    <AvatarFallback className="bg-gray-500 text-white">LZ</AvatarFallback>
                   </Avatar>
                   <div className="flex-1">
                     <h3 className="font-semibold text-olive">Dr. Leonardo Zacher</h3>
